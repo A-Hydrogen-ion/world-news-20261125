@@ -17,34 +17,34 @@
     position: relative;
     width: 1024px;
     height: 1024px;
-    background: #D9E6EB;
+    background: #C7DCE5;
     overflow: hidden;
   }
-  /* Top editorial masthead */
+  /* Editorial Masthead */
   .masthead {
     position: relative;
     z-index: 10;
-    height: 112px;
-    background: #F5EFE1;
+    height: 108px;
+    background: #F7F1E3;
     border-bottom: 4px solid #141822;
-    padding: 12px 26px;
+    padding: 10px 26px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 12px rgba(15, 20, 30, 0.12);
+    box-shadow: 0 4px 14px rgba(15, 20, 30, 0.14);
   }
   .mast-left .kicker {
     font-size: 13px;
     font-weight: 900;
-    letter-spacing: 2.2px;
-    color: #8A2C22;
+    letter-spacing: 2.4px;
+    color: #9A2C22;
     margin-bottom: 2px;
   }
   .mast-left h1 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 52px;
+    font-size: 54px;
     font-weight: 900;
-    line-height: 1;
+    line-height: 0.98;
     letter-spacing: -1px;
     color: #121620;
   }
@@ -53,41 +53,41 @@
     color: #FFF9F0;
     border: 3px solid #141822;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 9px 22px;
     text-align: center;
     box-shadow: 4px 4px 0 #141822;
   }
   .date-pill .wd {
     font-size: 13px;
     font-weight: 900;
-    letter-spacing: 2.4px;
+    letter-spacing: 2.5px;
     color: #FFE4B5;
   }
   .date-pill .dt {
-    font-size: 31px;
+    font-size: 32px;
     font-weight: 900;
-    line-height: 1.08;
-    letter-spacing: 0.4px;
+    line-height: 1.06;
+    letter-spacing: 0.5px;
   }
 
-  /* World map backdrop SVG */
+  /* World Map Layer */
   .world-bg {
     position: absolute;
-    top: 112px;
+    top: 108px;
     left: 0;
     width: 1024px;
-    height: 862px;
+    height: 870px;
     z-index: 1;
   }
 
-  /* Unified floating editorial story panels over the world map */
+  /* Floating Editorial Cards */
   .story {
     position: absolute;
     z-index: 5;
-    background: rgba(253, 250, 243, 0.96);
+    background: #FDFBF4;
     border: 3px solid #171B24;
     border-radius: 12px;
-    box-shadow: 5px 5px 0 rgba(19, 23, 34, 0.85);
+    box-shadow: 5px 5px 0 rgba(19, 23, 34, 0.88);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -106,8 +106,8 @@
   .story-inner {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 12px;
+    gap: 11px;
+    padding: 9px 11px;
     flex: 1;
   }
   .story-art {
@@ -121,7 +121,7 @@
   .story-text h2 {
     font-size: 24px;
     font-weight: 900;
-    line-height: 1.08;
+    line-height: 1.07;
     letter-spacing: -0.4px;
     color: #131722;
     margin-bottom: 6px;
@@ -130,23 +130,18 @@
     font-size: 15.5px;
     font-weight: 700;
     line-height: 1.24;
-    color: #38332B;
+    color: #353028;
   }
 
-  /* Hero card styling for Middle East lead story */
   .story.hero {
     border-width: 3.5px;
     box-shadow: 6px 6px 0 #131722;
-  }
-  .story.hero .story-art {
-    width: 124px;
-    height: 156px;
   }
   .story.hero .story-text h2 {
     font-size: 25.5px;
   }
 
-  /* Bottom ticker */
+  /* Bottom Dispatch Ticker */
   .ticker {
     position: absolute;
     bottom: 0;
@@ -181,7 +176,7 @@
 <div class="canvas">
   <header class="masthead">
     <div class="mast-left">
-      <div class="kicker">ONE DAY · SIX CONTINENTS &amp; SPACE</div>
+      <div class="kicker">GLOBAL FRONT PAGE · SIX REGIONS &amp; ORBIT</div>
       <h1>WORLD NEWS</h1>
     </div>
     <div class="date-pill">
@@ -190,80 +185,110 @@
     </div>
   </header>
 
-  <!-- Stylized Map Backdrop + Geographic Pins & Leader Lines (center band y=240..620 in SVG = y=352..732 on canvas) -->
-  <svg class="world-bg" viewBox="0 0 1024 862" width="1024" height="862">
+  <!-- Detailed Geographic World Map Band (y=245..605 in SVG = y=353..713 on canvas) -->
+  <svg class="world-bg" viewBox="0 0 1024 870" width="1024" height="870">
     <defs>
-      <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#DCE8ED"/>
-        <stop offset="50%" stop-color="#CFE0E8"/>
-        <stop offset="100%" stop-color="#C4D8E2"/>
+      <linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#D7E7EE"/>
+        <stop offset="50%" stop-color="#C8DCE6"/>
+        <stop offset="100%" stop-color="#BAD1DE"/>
       </linearGradient>
+      <filter id="landShadow" x="-4%" y="-4%" width="108%" height="108%">
+        <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#1E3446" flood-opacity="0.18"/>
+      </filter>
     </defs>
-    <rect width="1024" height="862" fill="url(#ocean)"/>
+    <rect width="1024" height="870" fill="url(#oceanGrad)"/>
 
-    <!-- Map graticule grid -->
-    <g stroke="#B3C9D4" stroke-width="1.2" opacity="0.75">
-      <line x1="0" y1="265" x2="1024" y2="265"/>
+    <!-- Map graticule -->
+    <g stroke="#9BBAC8" stroke-width="1" opacity="0.65">
+      <line x1="0" y1="275" x2="1024" y2="275"/>
       <line x1="0" y1="355" x2="1024" y2="355"/>
-      <line x1="0" y1="445" x2="1024" y2="445" stroke-dasharray="6 5"/>
-      <line x1="0" y1="535" x2="1024" y2="535"/>
-      <line x1="170" y1="0" x2="170" y2="862"/>
-      <line x1="340" y1="0" x2="340" y2="862"/>
-      <line x1="512" y1="0" x2="512" y2="862" stroke-dasharray="6 5"/>
-      <line x1="684" y1="0" x2="684" y2="862"/>
-      <line x1="854" y1="0" x2="854" y2="862"/>
+      <line x1="0" y1="435" x2="1024" y2="435" stroke-dasharray="6 5"/>
+      <line x1="0" y1="515" x2="1024" y2="515"/>
+      <line x1="0" y1="595" x2="1024" y2="595"/>
+      <line x1="170" y1="0" x2="170" y2="870"/>
+      <line x1="340" y1="0" x2="340" y2="870"/>
+      <line x1="512" y1="0" x2="512" y2="870" stroke-dasharray="6 5"/>
+      <line x1="684" y1="0" x2="684" y2="870"/>
+      <line x1="854" y1="0" x2="854" y2="870"/>
     </g>
 
-    <!-- Stylized World Continents centered cleanly in y=250..590 SVG band -->
-    <g fill="#EADFC7" stroke="#9C8D74" stroke-width="2.5" stroke-linejoin="round">
-      <!-- North America -->
-      <path d="M54 275 L178 260 L292 276 L326 322 L286 376 L246 404 L198 410 L158 386 L108 352 L66 312 Z"/>
+    <!-- Realistic Stylized Continents in y=246..595 -->
+    <g fill="#EAE0C8" stroke="#7F7058" stroke-width="2" stroke-linejoin="round" filter="url(#landShadow)">
+      <!-- North America & Central America -->
+      <path d="M52 290 C70 270, 118 260, 165 262 L212 256 L252 272 L292 270 L328 286 L310 308 L294 316 L282 338 L256 355 L234 360 L216 378 L206 396 L222 414 L208 424 L182 404 L164 380 L138 364 L112 344 L88 320 L54 310 Z"/>
+      <!-- Cuba / Caribbean islands -->
+      <path d="M236 382 L262 384 L264 391 L238 390 Z"/>
       <!-- Greenland -->
-      <path d="M318 242 L390 236 L402 272 L346 286 Z"/>
+      <path d="M324 246 C348 238, 384 238, 404 252 L392 276 L354 282 L332 268 Z"/>
       <!-- South America -->
-      <path d="M232 436 L298 446 L342 492 L310 554 L268 604 L242 586 L228 518 L212 470 Z"/>
-      <!-- Europe -->
-      <path d="M446 290 L526 266 L598 276 L608 324 L568 356 L490 364 L446 338 Z"/>
+      <path d="M226 424 C252 422, 286 432, 314 452 L338 476 L326 512 L302 544 L276 574 L264 600 L248 596 L242 560 L236 520 L220 482 L216 446 Z"/>
+      <!-- UK & Ireland -->
+      <path d="M440 286 L454 280 L458 302 L442 306 Z"/>
+      <!-- Continental Europe -->
+      <path d="M460 324 L486 292 L506 270 L534 264 L568 272 L592 288 L586 322 L568 338 L546 346 L528 338 L512 350 L490 344 L472 348 L458 340 Z"/>
       <!-- Africa -->
-      <path d="M452 384 L558 380 L618 426 L610 492 L564 568 L514 598 L478 542 L456 472 L430 422 Z"/>
-      <!-- Middle East & Asia -->
-      <path d="M588 356 L662 344 L732 292 L870 282 L958 332 L942 400 L886 446 L816 468 L746 456 L694 426 L636 416 L592 386 Z"/>
-      <!-- Japan & SE Asia -->
-      <path d="M908 378 L934 366 L940 398 L914 408 Z"/>
-      <path d="M798 486 L868 486 L892 508 L814 514 Z"/>
-      <!-- Australia -->
-      <path d="M824 532 L922 526 L958 570 L920 608 L836 596 L812 564 Z"/>
+      <path d="M454 366 C486 356, 526 360, 558 370 L584 396 L608 424 L598 460 L578 492 L564 532 L542 572 L516 584 L496 554 L488 510 L476 476 L450 458 L434 426 L438 390 Z"/>
+      <!-- Madagascar -->
+      <path d="M584 522 L596 516 L594 548 L580 552 Z"/>
+      <!-- Middle East / Arabian Peninsula -->
+      <path d="M570 356 L612 352 L638 376 L644 402 L614 418 L588 412 L572 384 Z"/>
+      <!-- Asia (Russia, India, East & SE Asia) -->
+      <path d="M588 282 C645 266, 738 258, 825 268 L912 282 L946 306 L918 334 L888 352 L878 386 L852 414 L824 418 L802 446 L786 432 L768 408 L738 404 L718 446 L696 448 L676 404 L646 392 L620 364 L590 346 Z"/>
+      <!-- Japan -->
+      <path d="M894 342 C908 330, 922 328, 928 346 L914 366 L898 368 Z"/>
+      <!-- Maritime SE Asia -->
+      <path d="M784 460 L824 468 L820 482 L780 474 Z"/>
+      <path d="M838 462 L878 466 L886 482 L842 482 Z"/>
+      <!-- Australia & NZ -->
+      <path d="M824 514 C864 504, 906 512, 932 536 L936 572 L904 592 L858 584 L822 572 L812 544 Z"/>
+      <path d="M956 572 L970 562 L972 586 L954 592 Z"/>
     </g>
 
-    <!-- Dashed global connection lines from map pins to top & bottom cards -->
-    <g stroke="#1E293B" stroke-width="2.8" stroke-dasharray="5 4" fill="none">
-      <!-- Brooklyn NY -> Top Left Card -->
-      <line x1="278" y1="342" x2="180" y2="232"/>
+    <!-- Dashed Trade / Maritime / Orbit Arcs for visual storytelling -->
+    <path d="M292 332 Q400 296 462 324" fill="none" stroke="#B57214" stroke-width="2" stroke-dasharray="3 4" opacity="0.75"/>
+    <path d="M598 382 Q670 398 765 404" fill="none" stroke="#C63426" stroke-width="2" stroke-dasharray="3 4" opacity="0.75"/>
+
+    <!-- Leader lines connecting map flashpoints to cards -->
+    <g stroke="#141822" stroke-width="2.6" stroke-dasharray="5 4" fill="none">
+      <!-- Brooklyn NY -> Top Left -->
+      <line x1="274" y1="322" x2="180" y2="232"/>
       <!-- Strait of Hormuz -> Top Center Hero -->
-      <line x1="636" y1="398" x2="526" y2="240"/>
+      <line x1="628" y1="382" x2="520" y2="236"/>
       <!-- Jiuquan China -> Top Right -->
-      <line x1="814" y1="364" x2="860" y2="232"/>
+      <line x1="808" y1="346" x2="862" y2="232"/>
       <!-- US / Atlantic Trade -> Bottom Left -->
-      <line x1="296" y1="378" x2="180" y2="612"/>
-      <!-- Antalya / Greece -> Bottom Center -->
-      <line x1="566" y1="354" x2="512" y2="612"/>
-      <!-- Europe / Deep Space -> Bottom Right -->
-      <line x1="506" y1="320" x2="846" y2="612"/>
+      <line x1="286" y1="346" x2="180" y2="612"/>
+      <!-- Antalya Turkey -> Bottom Center -->
+      <line x1="572" y1="342" x2="512" y2="612"/>
+      <!-- Europe ESA -> Bottom Right -->
+      <line x1="494" y1="312" x2="848" y2="612"/>
     </g>
 
-    <!-- Map Location Pins -->
+    <!-- Location Pins with outer halo -->
     <g>
-      <circle cx="278" cy="342" r="9" fill="#1E3A5F" stroke="#FFF" stroke-width="3"/>
-      <circle cx="636" cy="398" r="11" fill="#C63426" stroke="#FFF" stroke-width="3"/>
-      <circle cx="814" cy="364" r="9" fill="#2B5B84" stroke="#FFF" stroke-width="3"/>
-      <circle cx="296" cy="378" r="9" fill="#B57214" stroke="#FFF" stroke-width="3"/>
-      <circle cx="566" cy="354" r="9" fill="#246A63" stroke="#FFF" stroke-width="3"/>
-      <circle cx="506" cy="320" r="9" fill="#543B8C" stroke="#FFF" stroke-width="3"/>
+      <circle cx="274" cy="322" r="13" fill="rgba(30,58,95,0.22)"/>
+      <circle cx="274" cy="322" r="8" fill="#1E3A5F" stroke="#FFF" stroke-width="2.8"/>
+
+      <circle cx="628" cy="382" r="15" fill="rgba(198,52,38,0.28)"/>
+      <circle cx="628" cy="382" r="9.5" fill="#C63426" stroke="#FFF" stroke-width="2.8"/>
+
+      <circle cx="808" cy="346" r="13" fill="rgba(43,91,132,0.22)"/>
+      <circle cx="808" cy="346" r="8" fill="#2B5B84" stroke="#FFF" stroke-width="2.8"/>
+
+      <circle cx="286" cy="346" r="12" fill="rgba(181,114,20,0.24)"/>
+      <circle cx="286" cy="346" r="7.5" fill="#B57214" stroke="#FFF" stroke-width="2.5"/>
+
+      <circle cx="572" cy="342" r="13" fill="rgba(36,106,99,0.24)"/>
+      <circle cx="572" cy="342" r="8" fill="#246A63" stroke="#FFF" stroke-width="2.8"/>
+
+      <circle cx="494" cy="312" r="13" fill="rgba(84,59,140,0.24)"/>
+      <circle cx="494" cy="312" r="8" fill="#543B8C" stroke="#FFF" stroke-width="2.8"/>
     </g>
   </svg>
 
   <!-- 1. TOP-LEFT: Americas / Huawei Verdict -->
-  <section class="story" style="top: 126px; left: 22px; width: 312px; height: 220px;">
+  <section class="story" style="top: 122px; left: 22px; width: 312px; height: 220px;">
     <div class="story-head" style="background:#1E3A5F;">
       <span>AMERICAS · LAW</span>
       <span>BROOKLYN</span>
@@ -271,7 +296,7 @@
     <div class="story-inner">
       <div class="story-art" style="width:102px; height:152px;">
         <svg viewBox="0 0 104 148" width="102" height="152">
-          <rect width="104" height="148" fill="#1B2A42"/>
+          <rect width="104" height="148" fill="#18273F"/>
           <polygon points="12,48 52,18 92,48" fill="#EAE2D0"/>
           <rect x="18" y="48" width="68" height="6" fill="#CFC4B0"/>
           <rect x="24" y="54" width="8" height="32" fill="#EAE2D0"/>
@@ -295,7 +320,7 @@
   </section>
 
   <!-- 2. TOP-CENTER HERO: Middle East / Strait of Hormuz & Saudi Drones -->
-  <section class="story hero" style="top: 122px; left: 346px; width: 348px; height: 228px;">
+  <section class="story hero" style="top: 118px; left: 346px; width: 348px; height: 228px;">
     <div class="story-head" style="background:#C63426;">
       <span>MIDDLE EAST · MARITIME</span>
       <span>HORMUZ</span>
@@ -331,7 +356,7 @@
   </section>
 
   <!-- 3. TOP-RIGHT: Asia / Shenzhou-24 -->
-  <section class="story" style="top: 126px; left: 706px; width: 296px; height: 220px;">
+  <section class="story" style="top: 122px; left: 706px; width: 296px; height: 220px;">
     <div class="story-head" style="background:#2B5B84;">
       <span>ASIA · SPACE</span>
       <span>TIANGONG</span>
@@ -439,8 +464,8 @@
     </div>
   </section>
 
-  <!-- Central Map Legend Badge tucked neatly into the South Atlantic ocean -->
-  <div style="position:absolute; top:590px; left:24px; z-index:4; background:rgba(20,24,34,0.9); color:#FAF3E5; padding:7px 14px; border-radius:999px; border:2px solid #F4B942; font-size:12px; font-weight:900; letter-spacing:1.1px;">
+  <!-- Central Map Legend tucked cleanly into South Pacific -->
+  <div style="position:absolute; top:596px; left:24px; z-index:4; background:rgba(20,24,34,0.9); color:#FAF3E5; padding:7px 14px; border-radius:999px; border:2px solid #F4B942; font-size:12px; font-weight:900; letter-spacing:1.1px;">
     25 NOV 2026 · GLOBAL DISPATCH
   </div>
 
