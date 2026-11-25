@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>World News — 25 November 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1024px;
+    height: 1024px;
+    overflow: hidden;
+    background: #F4EFE3;
+    color: #161A22;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  }
+  .page {
+    width: 1024px;
+    height: 1024px;
+    padding: 22px 26px 0 26px;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(circle at 90% 8%, rgba(201, 59, 43, 0.07), transparent 36%),
+      radial-gradient(circle at 10% 90%, rgba(30, 58, 95, 0.06), transparent 40%),
+      #F4EFE3;
+  }
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #5A5348;
+    border-top: 4px solid #161A22;
+    padding-top: 8px;
+    margin-bottom: 6px;
+  }
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #161A22;
+    box-shadow: 0 3px 0 #F4EFE3, 0 5px 0 #161A22;
+    margin-bottom: 18px;
+  }
+  .masthead h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: #141820;
+  }
+  .date-badge {
+    background: #C63628;
+    color: #FFF9EF;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: right;
+    border: 2px solid #161A22;
+    box-shadow: 4px 4px 0 #161A22;
+  }
+  .date-badge .day {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    opacity: 0.92;
+  }
+  .date-badge .date {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 14px;
+    flex: 1;
+    margin-bottom: 16px;
+  }
+  .card {
+    background: #FCF9F2;
+    border: 2.5px solid #1E222B;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    box-shadow: 3px 3px 0 rgba(22, 26, 34, 0.14);
+    position: relative;
+    overflow: hidden;
+  }
+  .art {
+    width: 146px;
+    height: 186px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 2px solid #1E222B;
+    overflow: hidden;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+  }
+  .tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.1px;
+    color: #FFFFFF;
+  }
+  .card h2 {
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.3px;
+    color: #141820;
+  }
+  .card p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.32;
+    color: #3D3831;
+  }
+  .ticker {
+    margin: 0 -26px;
+    height: 50px;
+    background: #161A22;
+    color: #FAF3E5;
+    padding: 0 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+  }
+  .ticker .pill {
+    background: #E0A229;
+    color: #161A22;
+    padding: 3px 9px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 900;
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="topline">
+    <span>GLOBAL VISUAL DISPATCH · SIX REGIONS</span>
+    <span>25 NOVEMBER 2026 EDITION</span>
+  </div>
+  <header class="masthead">
+    <h1>WORLD NEWS</h1>
+    <div class="date-badge">
+      <div class="day">WEDNESDAY</div>
+      <div class="date">25 NOV 2026</div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- 1. Middle East / Maritime -->
+    <section class="card">
+      <div class="art">
+        <svg viewBox="0 0 146 186" width="146" height="186">
+          <defs>
+            <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1E334D"/>
+              <stop offset="62%" stop-color="#C85B32"/>
+              <stop offset="100%" stop-color="#224D6B"/>
+            </linearGradient>
+          </defs>
+          <rect width="146" height="186" fill="url(#sky1)"/>
+          <!-- Coastline silhouette -->
+          <path d="M0 95 L28 86 L55 98 L82 90 L146 98 L146 112 L0 112 Z" fill="#3B2B28"/>
+          <!-- Intercepted drone arcs -->
+          <path d="M18 34 Q48 16 74 44" fill="none" stroke="#F8D26A" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <circle cx="74" cy="44" r="7" fill="#FFAA3B"/>
+          <path d="M92 24 L112 42 M112 24 L92 42" stroke="#FFD670" stroke-width="3" stroke-linecap="round"/>
+          <!-- Sea -->
+          <rect y="110" width="146" height="76" fill="#173D5C"/>
+          <!-- Oil Tanker & Flames -->
+          <path d="M22 138 L120 138 L108 156 L32 156 Z" fill="#232730"/>
+          <rect x="42" y="124" width="22" height="14" fill="#414857"/>
+          <path d="M78 138 C72 115, 86 105, 92 92 C98 108, 110 116, 102 138 Z" fill="#FF6B2B"/>
+          <path d="M84 138 C82 124, 90 118, 92 110 C96 120, 100 126, 96 138 Z" fill="#FFE066"/>
+          <!-- Sea mine -->
+          <circle cx="34" cy="168" r="9" fill="#181C24" stroke="#E85A4F" stroke-width="2"/>
+          <path d="M34 156 L34 180 M22 168 L46 168 M26 160 L42 176 M42 160 L26 176" stroke="#E85A4F" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#C63628;">MIDDLE EAST · ENERGY</span>
+        <h2>HORMUZ TANKERS HIT MINES</h2>
+        <p>Iran's IRGC reports 2 tankers ablaze on unapproved routes; Saudi downs 4 drones.</p>
+      </div>
+    </section>
+
+    <!-- 2. Americas / Law & Tech -->
+    <section class="card">
+      <div class="art">
+        <svg viewBox="0 0 146 186" width="146" height="186">
+          <rect width="146" height="186" fill="#1B2A42"/>
+          <!-- Courthouse pediment -->
+          <polygon points="16,58 73,22 130,58" fill="#E8DFCE"/>
+          <rect x="24" y="58" width="98" height="8" fill="#CFC4B0"/>
+          <rect x="32" y="66" width="11" height="44" fill="#E8DFCE"/>
+          <rect x="55" y="66" width="11" height="44" fill="#E8DFCE"/>
+          <rect x="80" y="66" width="11" height="44" fill="#E8DFCE"/>
+          <rect x="103" y="66" width="11" height="44" fill="#E8DFCE"/>
+          <rect x="20" y="110" width="106" height="10" fill="#CFC4B0"/>
+          <!-- Split verdict badges -->
+          <rect x="14" y="130" width="56" height="42" rx="6" fill="#C63628"/>
+          <text x="42" y="149" text-anchor="middle" fill="#FFF" font-size="14" font-weight="900">10/12</text>
+          <text x="42" y="164" text-anchor="middle" fill="#FFE0D8" font-size="10" font-weight="800">GUILTY</text>
+          <rect x="76" y="130" width="56" height="42" rx="6" fill="#247A58"/>
+          <text x="104" y="149" text-anchor="middle" fill="#FFF" font-size="14" font-weight="900">RICO</text>
+          <text x="104" y="164" text-anchor="middle" fill="#D4F5E5" font-size="10" font-weight="800">CLEARED</text>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#1E3A5F;">AMERICAS · LAW &amp; TECH</span>
+        <h2>HUAWEI VERDICT SPLIT</h2>
+        <p>Brooklyn federal jury convicts on 10 fraud &amp; trade counts, acquits on RICO.</p>
+      </div>
+    </section>
+
+    <!-- 3. Climate / UN Summit -->
+    <section class="card">
+      <div class="art">
+        <svg viewBox="0 0 146 186" width="146" height="186">
+          <rect width="146" height="186" fill="#244B48"/>
+          <!-- Globe -->
+          <circle cx="73" cy="82" r="46" fill="#3C8D7E" stroke="#F4EFE3" stroke-width="3"/>
+          <path d="M52 54 Q72 62 66 84 Q56 98 44 92 Z" fill="#8CC483"/>
+          <path d="M84 52 Q104 60 100 84 Q88 94 80 76 Z" fill="#8CC483"/>
+          <!-- Crack / Deadlock X -->
+          <path d="M73 32 L66 64 L82 82 L68 112 L75 132" fill="none" stroke="#FF6B4A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Banner -->
+          <rect x="12" y="140" width="122" height="30" rx="6" fill="#161A22"/>
+          <text x="73" y="159" text-anchor="middle" fill="#FFD166" font-size="11.5" font-weight="900">NO DEAL · 17 YRS</text>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#246A63;">UN CLIMATE · ANTALYA</span>
+        <h2>COP31 ENDS WITH NO DEAL</h2>
+        <p>Talks close without consensus text for the first time in 17 years.</p>
+      </div>
+    </section>
+
+    <!-- 4. Global Trade / Economy -->
+    <section class="card">
+      <div class="art">
+        <svg viewBox="0 0 146 186" width="146" height="186">
+          <rect width="146" height="186" fill="#3C2D23"/>
+          <!-- Shipping containers -->
+          <rect x="20" y="72" width="48" height="26" rx="3" fill="#C63628" stroke="#161A22" stroke-width="2"/>
+          <rect x="74" y="72" width="52" height="26" rx="3" fill="#2B5B84" stroke="#161A22" stroke-width="2"/>
+          <rect x="20" y="44" width="48" height="26" rx="3" fill="#D98B26" stroke="#161A22" stroke-width="2"/>
+          <rect x="74" y="44" width="52" height="26" rx="3" fill="#357A66" stroke="#161A22" stroke-width="2"/>
+          <!-- Hull -->
+          <path d="M12 100 L134 100 L120 124 L26 124 Z" fill="#1A1E26"/>
+          <rect y="122" width="146" height="64" fill="#1D405C"/>
+          <!-- Tariff Stamp -->
+          <rect x="12" y="134" width="122" height="36" rx="6" fill="#F4C553" stroke="#161A22" stroke-width="2.5"/>
+          <text x="73" y="156" text-anchor="middle" fill="#161A22" font-size="12" font-weight="900">SEC. 301 · 16</text>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#B57214;">TRADE · ECONOMY</span>
+        <h2>NEW U.S. TARIFF WAVE</h2>
+        <p>Fresh duties target 16 economies over factory capacity; China warns of risk.</p>
+      </div>
+    </section>
+
+    <!-- 5. Asia / Spaceflight -->
+    <section class="card">
+      <div class="art">
+        <svg viewBox="0 0 146 186" width="146" height="186">
+          <defs>
+            <linearGradient id="space5" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0D1629"/>
+              <stop offset="100%" stop-color="#223F6B"/>
+            </linearGradient>
+          </defs>
+          <rect width="146" height="186" fill="url(#space5)"/>
+          <!-- Stars -->
+          <circle cx="24" cy="28" r="2" fill="#FFF"/>
+          <circle cx="116" cy="36" r="2.2" fill="#FFD166"/>
+          <circle cx="38" cy="78" r="1.5" fill="#FFF"/>
+          <circle cx="122" cy="88" r="1.8" fill="#FFF"/>
+          <!-- Tiangong station silhouette -->
+          <rect x="34" y="34" width="78" height="10" rx="4" fill="#D5DEE8"/>
+          <rect x="22" y="24" width="14" height="30" fill="#4A90E2"/>
+          <rect x="110" y="24" width="14" height="30" fill="#4A90E2"/>
+          <!-- Rocket & Plume -->
+          <path d="M73 64 L85 96 L85 130 L61 130 L61 96 Z" fill="#F4EFE3"/>
+          <polygon points="73,54 84,78 62,78" fill="#D93B2B"/>
+          <path d="M64 130 L52 174 L73 160 L94 174 L82 130 Z" fill="#FF8C32"/>
+          <path d="M68 130 L64 162 L73 152 L82 162 L78 130 Z" fill="#FFE66D"/>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#2B5B84;">ASIA · SPACEFLIGHT</span>
+        <h2>SHENZHOU-24 IN ORBIT</h2>
+        <p>Joint mission brings Pakistan's astronaut—Tiangong's first foreign crewmate.</p>
+      </div>
+    </section>
+
+    <!-- 6. Europe / Science -->
+    <section class="card">
+      <div class="art">
+        <svg viewBox="0 0 146 186" width="146" height="186">
+          <rect width="146" height="186" fill="#1A1530"/>
+          <!-- Deep sky stars -->
+          <circle cx="22" cy="30" r="1.8" fill="#B9C8FF"/>
+          <circle cx="122" cy="24" r="2" fill="#FFE8A3"/>
+          <circle cx="30" cy="142" r="1.8" fill="#FFF"/>
+          <circle cx="118" cy="128" r="1.5" fill="#B9C8FF"/>
+          <!-- Quasar accretion disk & relativistic jet -->
+          <line x1="73" y1="18" x2="73" y2="148" stroke="#7AC5FF" stroke-width="4" opacity="0.8"/>
+          <ellipse cx="73" cy="83" rx="52" ry="18" transform="rotate(-18 73 83)" fill="none" stroke="#FF9B42" stroke-width="8"/>
+          <ellipse cx="73" cy="83" rx="38" ry="12" transform="rotate(-18 73 83)" fill="none" stroke="#FFE680" stroke-width="4"/>
+          <circle cx="73" cy="83" r="13" fill="#0A0912" stroke="#FFE680" stroke-width="2.5"/>
+          <rect x="20" y="148" width="106" height="26" rx="5" fill="#322959"/>
+          <text x="73" y="166" text-anchor="middle" fill="#FFE680" font-size="13" font-weight="900">13.1B YRS OLD</text>
+        </svg>
+      </div>
+      <div class="body">
+        <span class="tag" style="background:#543B8C;">EUROPE · ASTROPHYSICS</span>
+        <h2>OLDEST QUASAR SPOTTED</h2>
+        <p>ESA Euclid &amp; JWST confirm Dún Aonghasa, 630M yrs after Big Bang.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="ticker">
+    <div><span class="pill">MORE · 25 NOV</span> GREECE 24-HR GENERAL STRIKE HALTS TRANSIT  ·  UN END-VIOLENCE DAY</div>
+    <div>25 NOV 2026</div>
+  </footer>
+</div>
+</body>
+</html>
