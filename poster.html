@@ -17,15 +17,14 @@
     position: relative;
     width: 1024px;
     height: 1024px;
-    background: #C7DCE5;
+    background: #C5DAE4;
     overflow: hidden;
   }
-  /* Editorial Masthead */
   .masthead {
     position: relative;
     z-index: 10;
-    height: 108px;
-    background: #F7F1E3;
+    height: 106px;
+    background: linear-gradient(180deg, #FAF5E8 0%, #F2EAD7 100%);
     border-bottom: 4px solid #141822;
     padding: 10px 26px;
     display: flex;
@@ -36,7 +35,7 @@
   .mast-left .kicker {
     font-size: 13px;
     font-weight: 900;
-    letter-spacing: 2.4px;
+    letter-spacing: 2.3px;
     color: #9A2C22;
     margin-bottom: 2px;
   }
@@ -49,11 +48,11 @@
     color: #121620;
   }
   .date-pill {
-    background: #C63426;
+    background: linear-gradient(180deg, #D23B2C 0%, #B72B1E 100%);
     color: #FFF9F0;
     border: 3px solid #141822;
     border-radius: 10px;
-    padding: 9px 22px;
+    padding: 8px 22px;
     text-align: center;
     box-shadow: 4px 4px 0 #141822;
   }
@@ -70,17 +69,15 @@
     letter-spacing: 0.5px;
   }
 
-  /* World Map Layer */
   .world-bg {
     position: absolute;
-    top: 108px;
+    top: 106px;
     left: 0;
     width: 1024px;
-    height: 870px;
+    height: 872px;
     z-index: 1;
   }
 
-  /* Floating Editorial Cards */
   .story {
     position: absolute;
     z-index: 5;
@@ -111,7 +108,7 @@
     flex: 1;
   }
   .story-art {
-    width: 112px;
+    width: 108px;
     height: 152px;
     border-radius: 8px;
     border: 2px solid #171B24;
@@ -119,9 +116,9 @@
     overflow: hidden;
   }
   .story-text h2 {
-    font-size: 24px;
+    font-size: 23.5px;
     font-weight: 900;
-    line-height: 1.07;
+    line-height: 1.08;
     letter-spacing: -0.4px;
     color: #131722;
     margin-bottom: 6px;
@@ -135,13 +132,13 @@
 
   .story.hero {
     border-width: 3.5px;
+    border-color: #141822;
     box-shadow: 6px 6px 0 #131722;
   }
   .story.hero .story-text h2 {
-    font-size: 25.5px;
+    font-size: 25px;
   }
 
-  /* Bottom Dispatch Ticker */
   .ticker {
     position: absolute;
     bottom: 0;
@@ -176,7 +173,7 @@
 <div class="canvas">
   <header class="masthead">
     <div class="mast-left">
-      <div class="kicker">GLOBAL FRONT PAGE · SIX REGIONS &amp; ORBIT</div>
+      <div class="kicker">GLOBAL FRONT PAGE · SIX REGIONS &amp; SPACE</div>
       <h1>WORLD NEWS</h1>
     </div>
     <div class="date-pill">
@@ -185,117 +182,128 @@
     </div>
   </header>
 
-  <!-- Detailed Geographic World Map Band (y=245..605 in SVG = y=353..713 on canvas) -->
-  <svg class="world-bg" viewBox="0 0 1024 870" width="1024" height="870">
+  <!-- Detailed Geographic World Map Band with Non-Crossing Leader Lines -->
+  <svg class="world-bg" viewBox="0 0 1024 872" width="1024" height="872">
     <defs>
       <linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#D7E7EE"/>
-        <stop offset="50%" stop-color="#C8DCE6"/>
-        <stop offset="100%" stop-color="#BAD1DE"/>
+        <stop offset="0%" stop-color="#DAE9F0"/>
+        <stop offset="50%" stop-color="#C8DDE8"/>
+        <stop offset="100%" stop-color="#B8D2DF"/>
       </linearGradient>
       <filter id="landShadow" x="-4%" y="-4%" width="108%" height="108%">
-        <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#1E3446" flood-opacity="0.18"/>
+        <feDropShadow dx="0" dy="2.5" stdDeviation="2" flood-color="#1B3448" flood-opacity="0.22"/>
       </filter>
     </defs>
-    <rect width="1024" height="870" fill="url(#oceanGrad)"/>
+    <rect width="1024" height="872" fill="url(#oceanGrad)"/>
 
-    <!-- Map graticule -->
-    <g stroke="#9BBAC8" stroke-width="1" opacity="0.65">
+    <!-- Cartographic graticule -->
+    <g stroke="#99B9C8" stroke-width="1" opacity="0.65">
       <line x1="0" y1="275" x2="1024" y2="275"/>
       <line x1="0" y1="355" x2="1024" y2="355"/>
       <line x1="0" y1="435" x2="1024" y2="435" stroke-dasharray="6 5"/>
       <line x1="0" y1="515" x2="1024" y2="515"/>
       <line x1="0" y1="595" x2="1024" y2="595"/>
-      <line x1="170" y1="0" x2="170" y2="870"/>
-      <line x1="340" y1="0" x2="340" y2="870"/>
-      <line x1="512" y1="0" x2="512" y2="870" stroke-dasharray="6 5"/>
-      <line x1="684" y1="0" x2="684" y2="870"/>
-      <line x1="854" y1="0" x2="854" y2="870"/>
+      <line x1="170" y1="0" x2="170" y2="872"/>
+      <line x1="340" y1="0" x2="340" y2="872"/>
+      <line x1="512" y1="0" x2="512" y2="872" stroke-dasharray="6 5"/>
+      <line x1="684" y1="0" x2="684" y2="872"/>
+      <line x1="854" y1="0" x2="854" y2="872"/>
     </g>
 
-    <!-- Realistic Stylized Continents in y=246..595 -->
-    <g fill="#EAE0C8" stroke="#7F7058" stroke-width="2" stroke-linejoin="round" filter="url(#landShadow)">
-      <!-- North America & Central America -->
-      <path d="M52 290 C70 270, 118 260, 165 262 L212 256 L252 272 L292 270 L328 286 L310 308 L294 316 L282 338 L256 355 L234 360 L216 378 L206 396 L222 414 L208 424 L182 404 L164 380 L138 364 L112 344 L88 320 L54 310 Z"/>
-      <!-- Cuba / Caribbean islands -->
-      <path d="M236 382 L262 384 L264 391 L238 390 Z"/>
+    <!-- Subtle ocean labels -->
+    <g fill="#5F8296" font-size="11" font-weight="800" letter-spacing="2.4" opacity="0.72">
+      <text x="372" y="424" text-anchor="middle">ATLANTIC OCEAN</text>
+      <text x="720" y="514" text-anchor="middle">INDIAN OCEAN</text>
+      <text x="92" y="492" text-anchor="middle">PACIFIC</text>
+    </g>
+
+    <!-- Detailed Continents centered cleanly in y=245..602 -->
+    <g fill="#EDE2CA" stroke="#7A6B54" stroke-width="1.8" stroke-linejoin="round" filter="url(#landShadow)">
+      <!-- North & Central America (curved Alaska, Hudson Bay, Florida, Yucatan) -->
+      <path d="M46 286 C62 272, 92 268, 122 264 L158 254 L208 254 L222 276 L242 264 L268 274 L306 276 L326 290 L300 308 L286 318 L272 340 L264 356 L256 346 L236 350 L226 364 L212 362 L212 378 L224 396 L220 416 L204 414 L182 396 L166 376 L142 356 L112 332 L90 304 L52 302 Z"/>
+      <!-- Caribbean -->
+      <path d="M242 378 L266 380 L272 387 L244 385 Z"/>
       <!-- Greenland -->
-      <path d="M324 246 C348 238, 384 238, 404 252 L392 276 L354 282 L332 268 Z"/>
+      <path d="M326 248 C348 238, 382 240, 398 254 L388 276 L354 282 L334 268 Z"/>
       <!-- South America -->
-      <path d="M226 424 C252 422, 286 432, 314 452 L338 476 L326 512 L302 544 L276 574 L264 600 L248 596 L242 560 L236 520 L220 482 L216 446 Z"/>
+      <path d="M226 420 C248 416, 282 426, 308 446 L338 468 L334 494 L312 528 L292 558 L272 588 L260 604 L246 594 L244 552 L236 512 L222 478 L216 446 Z"/>
+      <!-- Scandinavia -->
+      <path d="M490 278 C504 256, 534 252, 548 264 L544 288 L522 292 L506 288 Z"/>
       <!-- UK & Ireland -->
-      <path d="M440 286 L454 280 L458 302 L442 306 Z"/>
-      <!-- Continental Europe -->
-      <path d="M460 324 L486 292 L506 270 L534 264 L568 272 L592 288 L586 322 L568 338 L546 346 L528 338 L512 350 L490 344 L472 348 L458 340 Z"/>
+      <path d="M446 288 L456 282 L462 304 L448 308 Z"/>
+      <path d="M434 294 L442 292 L442 304 L434 304 Z"/>
+      <!-- Continental Europe & Mediterranean -->
+      <path d="M454 326 L474 304 L502 296 L536 294 L574 298 L586 322 L568 338 L552 340 L542 348 L534 334 L518 336 L512 350 L496 336 L474 342 L456 342 Z"/>
+      <!-- Turkey / Anatolia -->
+      <path d="M554 342 L592 338 L596 352 L556 354 Z"/>
       <!-- Africa -->
-      <path d="M454 366 C486 356, 526 360, 558 370 L584 396 L608 424 L598 460 L578 492 L564 532 L542 572 L516 584 L496 554 L488 510 L476 476 L450 458 L434 426 L438 390 Z"/>
+      <path d="M454 364 C484 354, 526 356, 558 368 L576 394 L608 424 L598 458 L576 492 L564 532 L542 572 L516 584 L496 554 L488 508 L476 474 L446 456 L432 424 L436 388 Z"/>
       <!-- Madagascar -->
       <path d="M584 522 L596 516 L594 548 L580 552 Z"/>
-      <!-- Middle East / Arabian Peninsula -->
-      <path d="M570 356 L612 352 L638 376 L644 402 L614 418 L588 412 L572 384 Z"/>
-      <!-- Asia (Russia, India, East & SE Asia) -->
-      <path d="M588 282 C645 266, 738 258, 825 268 L912 282 L946 306 L918 334 L888 352 L878 386 L852 414 L824 418 L802 446 L786 432 L768 408 L738 404 L718 446 L696 448 L676 404 L646 392 L620 364 L590 346 Z"/>
+      <!-- Arabian Peninsula & Levant -->
+      <path d="M578 356 L614 356 L638 378 L644 404 L612 420 L586 410 L574 382 Z"/>
+      <!-- Asia (Siberia, Central Asia, India, China, Indochina) -->
+      <path d="M584 282 C642 264, 738 256, 830 266 L914 282 L944 306 L916 334 L886 352 L878 386 L852 414 L824 418 L802 448 L786 432 L768 408 L738 406 L718 448 L698 448 L678 404 L646 392 L620 364 L590 344 Z"/>
       <!-- Japan -->
-      <path d="M894 342 C908 330, 922 328, 928 346 L914 366 L898 368 Z"/>
+      <path d="M896 344 C910 330, 924 330, 928 348 L914 368 L898 370 Z"/>
       <!-- Maritime SE Asia -->
       <path d="M784 460 L824 468 L820 482 L780 474 Z"/>
-      <path d="M838 462 L878 466 L886 482 L842 482 Z"/>
-      <!-- Australia & NZ -->
+      <path d="M840 462 L878 466 L886 482 L842 482 Z"/>
+      <!-- Australia & New Zealand -->
       <path d="M824 514 C864 504, 906 512, 932 536 L936 572 L904 592 L858 584 L822 572 L812 544 Z"/>
       <path d="M956 572 L970 562 L972 586 L954 592 Z"/>
     </g>
 
-    <!-- Dashed Trade / Maritime / Orbit Arcs for visual storytelling -->
-    <path d="M292 332 Q400 296 462 324" fill="none" stroke="#B57214" stroke-width="2" stroke-dasharray="3 4" opacity="0.75"/>
-    <path d="M598 382 Q670 398 765 404" fill="none" stroke="#C63426" stroke-width="2" stroke-dasharray="3 4" opacity="0.75"/>
+    <!-- Shipping / Trade Route Arc -->
+    <path d="M294 336 Q388 308 460 326" fill="none" stroke="#B57214" stroke-width="2" stroke-dasharray="3 4" opacity="0.8"/>
 
-    <!-- Leader lines connecting map flashpoints to cards -->
+    <!-- Non-Crossing Leader Lines Matching Card Geography -->
     <g stroke="#141822" stroke-width="2.6" stroke-dasharray="5 4" fill="none">
-      <!-- Brooklyn NY -> Top Left -->
-      <line x1="274" y1="322" x2="180" y2="232"/>
-      <!-- Strait of Hormuz -> Top Center Hero -->
-      <line x1="628" y1="382" x2="520" y2="236"/>
-      <!-- Jiuquan China -> Top Right -->
-      <line x1="808" y1="346" x2="862" y2="232"/>
-      <!-- US / Atlantic Trade -> Bottom Left -->
-      <line x1="286" y1="346" x2="180" y2="612"/>
-      <!-- Antalya Turkey -> Bottom Center -->
-      <line x1="572" y1="342" x2="512" y2="612"/>
-      <!-- Europe ESA -> Bottom Right -->
-      <line x1="494" y1="312" x2="848" y2="612"/>
+      <!-- 1. Top-Left (Brooklyn NY) -> North America East Coast -->
+      <line x1="270" y1="322" x2="178" y2="232"/>
+      <!-- 2. Top-Center (Europe / ESA Euclid) -> Europe -->
+      <line x1="496" y1="316" x2="512" y2="232"/>
+      <!-- 3. Top-Right (Asia / Shenzhou-24) -> Jiuquan China -->
+      <line x1="808" y1="344" x2="854" y2="232"/>
+      <!-- 4. Bottom-Left (Global Trade / US Tariffs) -> US East Coast / Atlantic -->
+      <line x1="286" y1="350" x2="178" y2="612"/>
+      <!-- 5. Bottom-Center (Climate / COP31) -> Antalya Turkey -->
+      <line x1="572" y1="346" x2="512" y2="612"/>
+      <!-- 6. Bottom-Right HERO (Middle East / Hormuz) -> Strait of Hormuz -->
+      <line x1="634" y1="382" x2="846" y2="612"/>
     </g>
 
-    <!-- Location Pins with outer halo -->
+    <!-- Map Pins -->
     <g>
-      <circle cx="274" cy="322" r="13" fill="rgba(30,58,95,0.22)"/>
-      <circle cx="274" cy="322" r="8" fill="#1E3A5F" stroke="#FFF" stroke-width="2.8"/>
+      <circle cx="270" cy="322" r="12" fill="rgba(30,58,95,0.22)"/>
+      <circle cx="270" cy="322" r="7.5" fill="#1E3A5F" stroke="#FFF" stroke-width="2.6"/>
 
-      <circle cx="628" cy="382" r="15" fill="rgba(198,52,38,0.28)"/>
-      <circle cx="628" cy="382" r="9.5" fill="#C63426" stroke="#FFF" stroke-width="2.8"/>
+      <circle cx="496" cy="316" r="12" fill="rgba(84,59,140,0.24)"/>
+      <circle cx="496" cy="316" r="7.5" fill="#543B8C" stroke="#FFF" stroke-width="2.6"/>
 
-      <circle cx="808" cy="346" r="13" fill="rgba(43,91,132,0.22)"/>
-      <circle cx="808" cy="346" r="8" fill="#2B5B84" stroke="#FFF" stroke-width="2.8"/>
+      <circle cx="808" cy="344" r="12" fill="rgba(43,91,132,0.22)"/>
+      <circle cx="808" cy="344" r="7.5" fill="#2B5B84" stroke="#FFF" stroke-width="2.6"/>
 
-      <circle cx="286" cy="346" r="12" fill="rgba(181,114,20,0.24)"/>
-      <circle cx="286" cy="346" r="7.5" fill="#B57214" stroke="#FFF" stroke-width="2.5"/>
+      <circle cx="286" cy="350" r="12" fill="rgba(181,114,20,0.24)"/>
+      <circle cx="286" cy="350" r="7.5" fill="#B57214" stroke="#FFF" stroke-width="2.6"/>
 
-      <circle cx="572" cy="342" r="13" fill="rgba(36,106,99,0.24)"/>
-      <circle cx="572" cy="342" r="8" fill="#246A63" stroke="#FFF" stroke-width="2.8"/>
+      <circle cx="572" cy="346" r="12" fill="rgba(36,106,99,0.24)"/>
+      <circle cx="572" cy="346" r="7.5" fill="#246A63" stroke="#FFF" stroke-width="2.6"/>
 
-      <circle cx="494" cy="312" r="13" fill="rgba(84,59,140,0.24)"/>
-      <circle cx="494" cy="312" r="8" fill="#543B8C" stroke="#FFF" stroke-width="2.8"/>
+      <circle cx="634" cy="382" r="14" fill="rgba(198,52,38,0.28)"/>
+      <circle cx="634" cy="382" r="9" fill="#C63426" stroke="#FFF" stroke-width="2.8"/>
     </g>
   </svg>
 
   <!-- 1. TOP-LEFT: Americas / Huawei Verdict -->
-  <section class="story" style="top: 122px; left: 22px; width: 312px; height: 220px;">
+  <section class="story" style="top: 120px; left: 22px; width: 314px; height: 222px;">
     <div class="story-head" style="background:#1E3A5F;">
       <span>AMERICAS · LAW</span>
       <span>BROOKLYN</span>
     </div>
     <div class="story-inner">
-      <div class="story-art" style="width:102px; height:152px;">
-        <svg viewBox="0 0 104 148" width="102" height="152">
+      <div class="story-art" style="width:102px; height:154px;">
+        <svg viewBox="0 0 104 148" width="102" height="154">
           <rect width="104" height="148" fill="#18273F"/>
           <polygon points="12,48 52,18 92,48" fill="#EAE2D0"/>
           <rect x="18" y="48" width="68" height="6" fill="#CFC4B0"/>
@@ -314,20 +322,129 @@
       </div>
       <div class="story-text">
         <h2>HUAWEI VERDICT SPLIT</h2>
-        <p>Guilty on 10 fraud counts; cleared of RICO.</p>
+        <p>Jury convicts on 10 fraud counts; acquits RICO.</p>
       </div>
     </div>
   </section>
 
-  <!-- 2. TOP-CENTER HERO: Middle East / Strait of Hormuz & Saudi Drones -->
-  <section class="story hero" style="top: 118px; left: 346px; width: 348px; height: 228px;">
+  <!-- 2. TOP-CENTER: Europe / ESA Euclid Oldest Quasar -->
+  <section class="story" style="top: 120px; left: 348px; width: 328px; height: 222px;">
+    <div class="story-head" style="background:#543B8C;">
+      <span>EUROPE · SCIENCE</span>
+      <span>ESA EUCLID</span>
+    </div>
+    <div class="story-inner">
+      <div class="story-art" style="width:104px; height:154px;">
+        <svg viewBox="0 0 104 150" width="104" height="154">
+          <rect width="104" height="150" fill="#1A1530"/>
+          <circle cx="16" cy="22" r="1.8" fill="#B9C8FF"/>
+          <circle cx="88" cy="20" r="2" fill="#FFE8A3"/>
+          <circle cx="20" cy="104" r="1.5" fill="#FFF"/>
+          <line x1="52" y1="14" x2="52" y2="112" stroke="#7AC5FF" stroke-width="3.5" opacity="0.85"/>
+          <ellipse cx="52" cy="64" rx="40" ry="14" transform="rotate(-18 52 64)" fill="none" stroke="#FF9B42" stroke-width="7"/>
+          <ellipse cx="52" cy="64" rx="28" ry="9" transform="rotate(-18 52 64)" fill="none" stroke="#FFE680" stroke-width="3.5"/>
+          <circle cx="52" cy="64" r="10" fill="#0A0912" stroke="#FFE680" stroke-width="2"/>
+          <rect x="8" y="114" width="88" height="26" rx="5" fill="#322959"/>
+          <text x="52" y="131" text-anchor="middle" fill="#FFE680" font-size="11.5" font-weight="900">13.1B YRS</text>
+        </svg>
+      </div>
+      <div class="story-text">
+        <h2>OLDEST QUASAR FOUND</h2>
+        <p>ESA Euclid &amp; JWST spot Dún Aonghasa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TOP-RIGHT: Asia / Shenzhou-24 -->
+  <section class="story" style="top: 120px; left: 688px; width: 314px; height: 222px;">
+    <div class="story-head" style="background:#2B5B84;">
+      <span>ASIA · SPACE</span>
+      <span>TIANGONG</span>
+    </div>
+    <div class="story-inner">
+      <div class="story-art" style="width:98px; height:154px;">
+        <svg viewBox="0 0 94 148" width="98" height="154">
+          <rect width="94" height="148" fill="#0F1B33"/>
+          <circle cx="16" cy="20" r="2" fill="#FFF"/>
+          <circle cx="78" cy="28" r="2" fill="#FFD166"/>
+          <circle cx="22" cy="86" r="1.5" fill="#FFF"/>
+          <rect x="20" y="24" width="54" height="8" rx="3" fill="#D5DEE8"/>
+          <rect x="12" y="16" width="10" height="24" fill="#4A90E2"/>
+          <rect x="72" y="16" width="10" height="24" fill="#4A90E2"/>
+          <path d="M47 48 L57 76 L57 106 L37 106 L37 76 Z" fill="#F4EFE3"/>
+          <polygon points="47,40 56,60 38,60" fill="#D93B2B"/>
+          <path d="M39 106 L29 140 L47 128 L65 140 L55 106 Z" fill="#FF8C32"/>
+          <path d="M43 106 L39 130 L47 122 L55 130 L51 106 Z" fill="#FFE66D"/>
+        </svg>
+      </div>
+      <div class="story-text">
+        <h2 style="font-size:21.5px;"><span style="white-space:nowrap;">SHENZHOU-24</span> LAUNCHES</h2>
+        <p>First Pakistani astronaut boards Tiangong.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BOTTOM-LEFT: Global Trade / U.S. Tariffs -->
+  <section class="story" style="top: 722px; left: 22px; width: 314px; height: 228px;">
+    <div class="story-head" style="background:#B57214;">
+      <span>GLOBAL TRADE</span>
+      <span>SEC. 301</span>
+    </div>
+    <div class="story-inner">
+      <div class="story-art" style="width:104px; height:152px;">
+        <svg viewBox="0 0 104 150" width="104" height="152">
+          <rect width="104" height="150" fill="#3B2B22"/>
+          <rect x="12" y="54" width="36" height="20" rx="2" fill="#C63426" stroke="#141822" stroke-width="1.8"/>
+          <rect x="52" y="54" width="40" height="20" rx="2" fill="#2B5B84" stroke="#141822" stroke-width="1.8"/>
+          <rect x="12" y="30" width="36" height="20" rx="2" fill="#D98B26" stroke="#141822" stroke-width="1.8"/>
+          <rect x="52" y="30" width="40" height="20" rx="2" fill="#357A66" stroke="#141822" stroke-width="1.8"/>
+          <path d="M8 78 L96 78 L86 98 L18 98 Z" fill="#1A1E26"/>
+          <rect y="98" width="104" height="52" fill="#1D405C"/>
+          <rect x="10" y="108" width="84" height="30" rx="5" fill="#F4C553" stroke="#141822" stroke-width="2"/>
+          <text x="52" y="128" text-anchor="middle" fill="#141822" font-size="12" font-weight="900">16 NATIONS</text>
+        </svg>
+      </div>
+      <div class="story-text">
+        <h2>NEW U.S. TARIFF PLAN</h2>
+        <p>U.S. readies Sec. 301 duties on 16 economies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BOTTOM-CENTER: Climate / COP31 Deadlock -->
+  <section class="story" style="top: 722px; left: 348px; width: 328px; height: 228px;">
+    <div class="story-head" style="background:#246A63;">
+      <span>UN CLIMATE</span>
+      <span>ANTALYA</span>
+    </div>
+    <div class="story-inner">
+      <div class="story-art" style="width:106px; height:152px;">
+        <svg viewBox="0 0 108 150" width="106" height="152">
+          <rect width="108" height="150" fill="#204542"/>
+          <circle cx="54" cy="62" r="38" fill="#3C8D7E" stroke="#F4EFE2" stroke-width="2.5"/>
+          <path d="M36 40 Q52 46 48 64 Q40 76 30 70 Z" fill="#8CC483"/>
+          <path d="M62 38 Q78 44 74 64 Q64 72 58 58 Z" fill="#8CC483"/>
+          <path d="M54 20 L48 48 L60 64 L48 88 L56 104" fill="none" stroke="#FF6B4A" stroke-width="4.5" stroke-linecap="round"/>
+          <rect x="8" y="112" width="92" height="28" rx="5" fill="#141822"/>
+          <text x="54" y="130" text-anchor="middle" fill="#FFD166" font-size="11.5" font-weight="900">NO DEAL · 17Y</text>
+        </svg>
+      </div>
+      <div class="story-text">
+        <h2>COP31 ENDS IN DEADLOCK</h2>
+        <p>First UN climate summit with no deal in 17 yrs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. BOTTOM-RIGHT HERO: Middle East / Strait of Hormuz & Saudi Drones -->
+  <section class="story hero" style="top: 718px; left: 688px; width: 314px; height: 232px;">
     <div class="story-head" style="background:#C63426;">
-      <span>MIDDLE EAST · MARITIME</span>
+      <span>MIDDLE EAST · LEAD</span>
       <span>HORMUZ</span>
     </div>
     <div class="story-inner">
-      <div class="story-art" style="width:120px; height:158px;">
-        <svg viewBox="0 0 126 158" width="120" height="158">
+      <div class="story-art" style="width:110px; height:156px;">
+        <svg viewBox="0 0 126 158" width="110" height="156">
           <defs>
             <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#1E334D"/>
@@ -350,116 +467,7 @@
       </div>
       <div class="story-text">
         <h2>HORMUZ TANKERS HIT MINES</h2>
-        <p>2 ships ablaze; Saudi downs 4 drones.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. TOP-RIGHT: Asia / Shenzhou-24 -->
-  <section class="story" style="top: 122px; left: 706px; width: 296px; height: 220px;">
-    <div class="story-head" style="background:#2B5B84;">
-      <span>ASIA · SPACE</span>
-      <span>TIANGONG</span>
-    </div>
-    <div class="story-inner">
-      <div class="story-art" style="width:94px; height:152px;">
-        <svg viewBox="0 0 94 148" width="94" height="152">
-          <rect width="94" height="148" fill="#0F1B33"/>
-          <circle cx="16" cy="20" r="2" fill="#FFF"/>
-          <circle cx="78" cy="28" r="2" fill="#FFD166"/>
-          <circle cx="22" cy="86" r="1.5" fill="#FFF"/>
-          <rect x="20" y="24" width="54" height="8" rx="3" fill="#D5DEE8"/>
-          <rect x="12" y="16" width="10" height="24" fill="#4A90E2"/>
-          <rect x="72" y="16" width="10" height="24" fill="#4A90E2"/>
-          <path d="M47 48 L57 76 L57 106 L37 106 L37 76 Z" fill="#F4EFE3"/>
-          <polygon points="47,40 56,60 38,60" fill="#D93B2B"/>
-          <path d="M39 106 L29 140 L47 128 L65 140 L55 106 Z" fill="#FF8C32"/>
-          <path d="M43 106 L39 130 L47 122 L55 130 L51 106 Z" fill="#FFE66D"/>
-        </svg>
-      </div>
-      <div class="story-text">
-        <h2 style="font-size:21.5px;"><span style="white-space:nowrap;">SHENZHOU-24</span> LAUNCHES</h2>
-        <p>First Pakistani astronaut boards Tiangong.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. BOTTOM-LEFT: Global Trade / U.S. Tariffs -->
-  <section class="story" style="top: 722px; left: 22px; width: 310px; height: 228px;">
-    <div class="story-head" style="background:#B57214;">
-      <span>GLOBAL TRADE</span>
-      <span>SEC. 301</span>
-    </div>
-    <div class="story-inner">
-      <div class="story-art" style="width:104px; height:152px;">
-        <svg viewBox="0 0 104 150" width="104" height="152">
-          <rect width="104" height="150" fill="#3B2B22"/>
-          <rect x="12" y="54" width="36" height="20" rx="2" fill="#C63426" stroke="#141822" stroke-width="1.8"/>
-          <rect x="52" y="54" width="40" height="20" rx="2" fill="#2B5B84" stroke="#141822" stroke-width="1.8"/>
-          <rect x="12" y="30" width="36" height="20" rx="2" fill="#D98B26" stroke="#141822" stroke-width="1.8"/>
-          <rect x="52" y="30" width="40" height="20" rx="2" fill="#357A66" stroke="#141822" stroke-width="1.8"/>
-          <path d="M8 78 L96 78 L86 98 L18 98 Z" fill="#1A1E26"/>
-          <rect y="98" width="104" height="52" fill="#1D405C"/>
-          <rect x="10" y="108" width="84" height="30" rx="5" fill="#F4C553" stroke="#141822" stroke-width="2"/>
-          <text x="52" y="128" text-anchor="middle" fill="#141822" font-size="12" font-weight="900">16 NATIONS</text>
-        </svg>
-      </div>
-      <div class="story-text">
-        <h2>NEW U.S. TARIFF WAVE</h2>
-        <p>Duties target 16 partners; China warns.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. BOTTOM-CENTER: Climate / COP31 Deadlock -->
-  <section class="story" style="top: 722px; left: 346px; width: 332px; height: 228px;">
-    <div class="story-head" style="background:#246A63;">
-      <span>UN CLIMATE</span>
-      <span>ANTALYA</span>
-    </div>
-    <div class="story-inner">
-      <div class="story-art" style="width:108px; height:152px;">
-        <svg viewBox="0 0 108 150" width="108" height="152">
-          <rect width="108" height="150" fill="#204542"/>
-          <circle cx="54" cy="62" r="38" fill="#3C8D7E" stroke="#F4EFE2" stroke-width="2.5"/>
-          <path d="M36 40 Q52 46 48 64 Q40 76 30 70 Z" fill="#8CC483"/>
-          <path d="M62 38 Q78 44 74 64 Q64 72 58 58 Z" fill="#8CC483"/>
-          <path d="M54 20 L48 48 L60 64 L48 88 L56 104" fill="none" stroke="#FF6B4A" stroke-width="4.5" stroke-linecap="round"/>
-          <rect x="8" y="112" width="92" height="28" rx="5" fill="#141822"/>
-          <text x="54" y="130" text-anchor="middle" fill="#FFD166" font-size="11.5" font-weight="900">NO DEAL · 17Y</text>
-        </svg>
-      </div>
-      <div class="story-text">
-        <h2>COP31 ENDS IN DEADLOCK</h2>
-        <p>First UN climate talks with no deal in 17 yrs.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. BOTTOM-RIGHT: Europe / Oldest Quasar -->
-  <section class="story" style="top: 722px; left: 692px; width: 310px; height: 228px;">
-    <div class="story-head" style="background:#543B8C;">
-      <span>EUROPE · SCIENCE</span>
-      <span>EUCLID</span>
-    </div>
-    <div class="story-inner">
-      <div class="story-art" style="width:104px; height:152px;">
-        <svg viewBox="0 0 104 150" width="104" height="152">
-          <rect width="104" height="150" fill="#1A1530"/>
-          <circle cx="16" cy="22" r="1.8" fill="#B9C8FF"/>
-          <circle cx="88" cy="20" r="2" fill="#FFE8A3"/>
-          <circle cx="20" cy="104" r="1.5" fill="#FFF"/>
-          <line x1="52" y1="14" x2="52" y2="112" stroke="#7AC5FF" stroke-width="3.5" opacity="0.85"/>
-          <ellipse cx="52" cy="64" rx="40" ry="14" transform="rotate(-18 52 64)" fill="none" stroke="#FF9B42" stroke-width="7"/>
-          <ellipse cx="52" cy="64" rx="28" ry="9" transform="rotate(-18 52 64)" fill="none" stroke="#FFE680" stroke-width="3.5"/>
-          <circle cx="52" cy="64" r="10" fill="#0A0912" stroke="#FFE680" stroke-width="2"/>
-          <rect x="8" y="114" width="88" height="26" rx="5" fill="#322959"/>
-          <text x="52" y="131" text-anchor="middle" fill="#FFE680" font-size="11.5" font-weight="900">13.1B YRS</text>
-        </svg>
-      </div>
-      <div class="story-text">
-        <h2>OLDEST QUASAR FOUND</h2>
-        <p>Euclid &amp; JWST spot Dún Aonghasa.</p>
+        <p>IRGC reports 2 ships ablaze; Saudi downs 4 drones.</p>
       </div>
     </div>
   </section>
@@ -471,7 +479,7 @@
 
   <footer class="ticker">
     <div><span class="badge">ALSO 25 NOV</span> GREECE 24-HR GENERAL STRIKE HALTS TRANSIT · UN END-VIOLENCE DAY</div>
-    <div>VERIFIED · 25 NOV 2026</div>
+    <div>25 NOV 2026 EDITION</div>
   </footer>
 </div>
 </body>
